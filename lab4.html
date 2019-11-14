@@ -1,0 +1,111 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title>4. Praktiska nodarbība</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+	<style>
+		.menu { background-color:darkgray;
+				width: 150px;
+				text-align: center;
+				position: absolute;
+				z-index: 1;
+		}
+		#buttons{
+			position:relative;
+			top:80px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Virsraksts</h1>
+	<p id="para1">Paragrāfs</p>
+	<button id="btn1"> Mainīt tekstu</button>
+	<button id="btn2"> Mainīt HTML </button>
+	<button id ="btn3">Mainīt CSS </button>
+	
+<div class="menu">
+<h2>Efekti</h2>
+	<div id="efekti">
+		<a href=#>Sākums</a><br>
+		<a href=#>Ziņas</a><br>
+		<a href=#>Kontakti</a><br>
+		<a href=#>Informācija par mums</a>
+	</div>
+</div>
+<div id = "buttons">
+		<h3>Noslēpt</h3>
+		<button id="btn4"> Paslēpt</button>
+		<button id="btn5"> Rādīt </button>
+		<button id ="btn6"> Pārslēgt </button>
+		<h3>Miglot</h3>
+		<button id="btn7"> Paslēpt</button>
+		<button id="btn8"> Rādīt </button>
+		<button id ="btn9"> Pārslēgt </button>
+		<h3>Slīdēt</h3>
+		<button id="btn10"> Paslēpt</button>
+		<button id="btn11"> Rādīt </button>
+		<button id ="btn12"> Pārslēgt </button>
+		<br><br>
+		<button id="btn13">Palaist animāciju</button>
+</div>
+
+
+<script>
+	$("#btn1").click(function(){
+		$("h1").text("4.Praktiska nodarbība"); 
+	});
+	$("#btn2").click(function(){
+		$ ("#para1").html ("<b>jQuery</b>"); 
+	});
+	$("#btn3").click(function(){
+		$ ("#para1").css ({
+			"color":"white",
+			"background-color":"black",
+			"font-size":"150%"});
+	});	
+	$("#btn4").click(function(){
+		$("#efekti").hide();
+	});
+	$("#btn5").click(function(){
+		$("#efekti").show();
+	});
+	$("#btn6").click(function(){
+		$("#efekti").toggle();
+	});
+	$("#btn7").click(function(){
+		$("#efekti").fadeOut(5000);
+	});
+	$("#btn8").click(function(){
+		$("#efekti").fadeIn(5000);
+	});
+	$("#btn9").click(function(){
+		$("#efekti").fadeToggle();
+	});
+	$("#btn10").click(function(){
+		$("#efekti").slideUp();
+	});
+	$("#btn11").click(function(){
+		$("#efekti").slideDown();
+	});
+	$("#btn12").click(function(){
+		$("#efekti").slideToggle();
+	});
+	$("#btn13").click(function(){
+		$(".menu").animate({'left':'+=50px',
+							'width':'+=10px',
+							'height':'+=10px'},5000);
+		$(".menu").animate({'left':'-=40px'});
+		$(".menu").animate({'weight':'+=20px'});
+	});
+</script>
+
+
+
+
+
+
+
+
+</body>
+</htmll>

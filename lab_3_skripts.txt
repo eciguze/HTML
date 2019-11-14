@@ -1,0 +1,37 @@
+function Funkcija() {
+		var d=document.getElementById('para1');
+		d.style.color = "white";
+		d.style.backgroundColor = "black";
+	}
+	
+function jaunsParagrafs(){
+	var para = document.createElement("p");
+	var node = document.createTextNode("Jauns Paragrāfs");
+	para.appendChild(node);
+	
+	var element = document.getElementsByTagName("h1");
+	element[0].appendChild(para);
+}
+function funkcijaConfirm() {
+	var c;
+if (confirm('OK vai Cancel')==true){
+	c = "OK";
+} else {
+	c = "Cancel";
+}
+	document.getElementById('logi').innerHTML = c;
+}
+function funkcijaPrompt(){
+var teksts = prompt("Ievadiet kaut kādu tekstu",
+"Kaut kāds teksts");
+if(teksts != null){
+document.getElementById('logi').innerHTML = 
+"Jūsu teksts: "+teksts;
+}
+}
+function laiks(){
+var t = new Date;
+document.getElementById('pulkstenis').
+innerHTML = t.toLocaleTimeString();
+
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title>5. Praktiska nodarbība</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+	<style>
+		ul{list-style:none;}
+		#gallery {  background-color:gray;
+					width:660px;
+					margin: 0 auto;
+					padding: 10px;
+		}
+		#main-img { width: 660px; height: 500px;}
+		#gallery li { display: inline;
+						margin-left: 3px;
+		}
+		#gallery ul{padding-left: 10px;}
+		#slideshow {background-color:gray;
+					width:400px; height:300px;
+					margin:0 auto;}
+		#slides li img{ position:absolute;
+						width:380px;height:280px;
+						margin:0 auto;
+						padding:10px;}
+		#slides{padding:0;}
+		#left,#right{position:relative;
+			top:250px;
+			width:35px; height:35px;}
+		
+	</style>
+	<script>
+		$(document).ready( function(){
+			$("#gallery li img").hover( function(){
+				$("#main-img").attr('src',
+				$(this).attr('src').replace('thumb/',''));
+			});
+			
+			var cnt = 0;
+			$('#slides li img').hide();
+			$('#slides li img:eq('+cnt+')').show();
+			
+			$('#left').click(function(){
+				cnt ==0 ? cnt=4 : cnt--;
+				$('#slides li img').fadeOut();
+				$('#slides li img:eq('+cnt+')').fadeIn(1000);
+			});
+				$('#right').click(function(){
+				cnt ==4 ? cnt=0 : cnt++;
+				$('#slides li img').fadeOut();
+				$('#slides li img:eq('+cnt+')').fadeIn(1000);
+			});
+			setInterval(function() {
+			cnt ==4 ? cnt=0 : cnt++;
+				$('#slides li img').fadeOut();
+				$('#slides li img:eq('+cnt+')').fadeIn(1000);
+			},1000);
+		});
+		
+	</script>
+</head>
+<body>
+<div id="container">
+	<center>
+	<h1>5. Praktiska nodarbība</h1>
+	<p>Attēlu galerija</p>
+	</center>
+	<div id="gallery">
+	<img src="Atteli/img_0.jpg" id="main-img">
+	<ul>
+	<li><img src="Atteli/thumb/img_0.jpg"></li>
+	<li><img src="Atteli/thumb/img_1.jpg"></li>
+	<li><img src="Atteli/thumb/img_2.jpg"></li>
+	<li><img src="Atteli/thumb/img_3.jpg"></li>
+	<li><img src="Atteli/thumb/img_4.jpg"></li>
+	<li><img src="Atteli/thumb/img_5.jpg"></li>
+	<li><img src="Atteli/thumb/img_6.jpg"></li>
+	<li><img src="Atteli/thumb/img_7.jpg"></li>
+	<li><img src="Atteli/thumb/img_8.jpg"></li>
+	<li><img src="Atteli/thumb/img_9.jpg"></li>
+	</ul>
+	</div>
+	<div id="slideshow">
+		<ul id="slides">
+			<li><img src="Atteli/img_0.jpg"/></li>
+			<li><img src="Atteli/img_1.jpg"/></li>
+			<li><img src="Atteli/img_2.jpg"/></li>
+			<li><img src="Atteli/img_3.jpg"/></li>
+			<li><img src="Atteli/img_4.jpg"/></li>
+		</ul>
+		<center>
+				<img id="left" src="Atteli/back.png"/>
+				<img id="right" src="Atteli/front.png"/>
+		</center>
+	</div>
+</div>
+</body>
+</html>

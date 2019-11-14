@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title> 3.Praktiska nodarbība </title>
+	<script src="lab_3_skripts.txt"></script>
+</head>
+<body>
+	<h1>3. Praktiska nodarbiba</h1>
+	<p id="para1">kdsfhskfhkshfks</p>
+<script>
+	document.getElementById('para1').innerHTML='JavaScript';
+</script>
+<button type="button"onClick="Funkcija()"> Mainīt stiīlu </button>
+<button type="button" onclick="document.getElementById('para1').style.fontSize='30px'">
+Mainīt teksta izmēru</button>
+<br><br>
+<button type="button" onClick="jaunsParagrafs()">
+Izveidot jaunu paragrāfu </button>
+<h1>BOM</h1>
+	<p id="parlukprogramma"> </p>
+	<p id="ekrans"> </p>
+<script>
+	document.getElementById("parlukprogramma").innerHTML = 
+	"Nosaukums: " + navigator.appName + "<br>Koda nosaukums: " + navigator.appCodeName + 
+	"<br> Dzinejs: " + navigator.product;;
+	var d =document.getElementById("ekrans");
+	var w = window.innerWidth;
+	var h = window.innerHeight;
+	d.innerHTML="Parlūkprogrammas platums: " +w+ ", augstums: " +h;
+	</script>
+	<h2 id="logi">Uznirstoši logi<h2>
+	<button onClick="alert('tests')">Allert</button>
+	<button onClick="funkcijaConfirm()">Confirm</button>
+	<button onClick = "funkcijaPrompt()">Prompt</button>
+	
+	<p id = "pulkstenis"></p>
+<script>
+setInterval(laiks,100);
+</script>	
+</body>
+</html>
